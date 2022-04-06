@@ -19,10 +19,14 @@ public class Snake {
             sp.paint(g);
         }
     }
-    // TODO setDirection(...)
+    // TODO setDirection(...) dodelame pozdeji spolecne
 
     public void moveForward() {
-
+        SnakePiece head = pieces.getFirst();
+        // TODO pozdeji spolecne dodelame implementaci rizeni a zohledneni direction (smeru), zatim pohybujeme nahoru
+        SnakePiece newHead = new SnakePiece(head.getI() - 1, head.getJ());
+        pieces.addFirst(newHead); // pridat "novou hlavu" na zacatek
+        pieces.removeLast();       // odstranit "starou hlavu" z konce
     }
 
     public Deque<SnakePiece> getPieces(){
